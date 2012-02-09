@@ -24,21 +24,34 @@ sub parse_item1
 	readline($F) for (0...18);
 
 	while (1) {
-		print "Location: ", &getline, "\n";
+		my $location = &getline;
 		&skipline(1);
-		print "Group: ", &getline, "\n";
-		print "Team: ", &getline, "\n";
-		print "Number: ", &getline, "\n";
-		print "Name: ", &getline, "\n";
-		print "From date: ", &getline, "\n";
-		print "From time: ", &getline, "\n";
-		print "End date: ", &getline, "\n";
-		print "End time: ", &getline, "\n";
-		print "Total days: ", &getline, "\n";
-		print "Total hours: ", &getline, "\n";
-		print "Category: ", &getline, "\n";
+		my $group = &getline;
+		my $team = &getline;
+		my $number = &getline;
+		my $name = &getline;
+		my $fromdate = &getline;
+		my $fromtime = &getline;
+		my $enddate = &getline;
+		my $endtime = &getline;
+		my $totaldays = &getline;
+		my $totalhours = &getline;
+		my $category = &getline;
 		&skipline(2);
-		print "State: ", &getline, "\n";
+		my $state = &getline;
+
+		print "Group: ", $group, "\n";
+		print "Team: ", $team, "\n";
+		print "Number: ", $number, "\n";
+		print "Name: ", $name, "\n";
+		print "From date: ", $fromdate, "\n";
+		print "From time: ", $fromtime, "\n";
+		print "End date: ", $enddate, "\n";
+		print "End time: ", $endtime, "\n";
+		print "Total days: ", $totaldays, "\n";
+		print "Total hours: ", $totalhours, "\n";
+		print "Category: ", $category, "\n";
+		print "State: ", $state, "\n";
 
 		print "\n\n\n";
 
@@ -87,7 +100,7 @@ BEGIN
 			&parse_item1();
 		}
 		if ($_ =~ /公出列表/) {
-			&parse_item2();
+#			&parse_item2();
 		}
 	}
 }
